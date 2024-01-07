@@ -11,7 +11,7 @@ const AxiosQuery = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const fetchUser = async () => {
+  const fetchUserWithAxios = async () => {
     try {
       const { data } = await instance.get("users");
       setData(data);
@@ -26,7 +26,7 @@ const AxiosQuery = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchUser();
+    fetchUserWithAxios();
   }, []);
 
   if (isLoading) return <>Loading...</>;
